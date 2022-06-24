@@ -8,7 +8,7 @@
 
 Console.WriteLine("Введите число, квадрат котрого хотите получить.");
 int num = Convert.ToInt32(Console.ReadLine());
-int kv = num*num;
+int kv = num * num;
 Console.Write("Квадрат вашего числа равен ");
 Console.WriteLine(kv);
 
