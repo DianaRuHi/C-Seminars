@@ -5,23 +5,23 @@
 2 -> " -2, -1, 0, 1, 2" */
 
 
-Console.WriteLine("Введите число.");
+Console.WriteLine("Введите натуральное число N.");
+Console.Write("n = ");
 int n = Convert.ToInt32(Console.ReadLine());
 int count = -n;
-if (n > 0)
+if (n < 1)
 {
-    while (count < n)
-    {
-        Console.Write($"{count}, ");
-        count += 1;
-    }
+    Console.WriteLine("Введеное число не является натуральным.");
 }
 else
 {
-    while (count > n)
+    while (count <= n)
     {
-        Console.Write($"{count}, ");
-        count -= 1;
+        Console.Write($"{count}");
+        if (count < n)
+        {
+            Console.Write(", ");
+        }
+        count += 1;
     }
 }
-Console.Write(n);
