@@ -13,17 +13,38 @@ void PascalTriangle(int num)
         }
     }
 
+    //    for (int i = 0; i < matr.GetLength(0); i++)
+    //    {
+    //        //Более менее норамльный вывод до 13 строки, потом начинает съезжать
+    //        for (int j = 0; j < matr.GetLength(1); j++)
+    //        {
+    //            if (matr[i,j] == 0) Console.Write($"    ");
+    //            else if (matr[i,j]<10) Console.Write($"  {matr[i,j]} ");
+    //            else if (matr[i,j]<100) Console.Write($" {matr[i,j]} ");
+    //            else Console.Write($" {matr[i,j]}");
+    //        }
+    //        Console.WriteLine();
+    //    }
+
+    string[] str = new string[matr.GetLength(0)];
     for (int i = 0; i < matr.GetLength(0); i++)
     {
-        //Более менее норамльный вывод до 13 строки, потом начинает съезжать
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            if (matr[i,j] == 0) Console.Write($"    ");
-            else if (matr[i,j]<10) Console.Write($"  {matr[i,j]} ");
-            else if (matr[i,j]<100) Console.Write($" {matr[i,j]} ");
-            else Console.Write($" {matr[i,j]}");
+            if (matr[i, j] == 0) str[i] = str[i] + ' ';
+            else str[i] = str[i] + Convert.ToString(matr[i, j]);
         }
-        Console.WriteLine();
+    }
+// Более универсальный, но менее красивый вывод
+    for (int i = 0; i < num; i++)
+    {
+        int leng = (str[num - 1].Length - str[i].Length)/2;
+        while (leng>0)
+        {
+            Console.Write(" ");
+            leng--;
+        }
+        Console.WriteLine(str[i]);
     }
 }
 
